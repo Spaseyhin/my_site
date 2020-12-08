@@ -11,6 +11,14 @@ end
 before do
 	init_db
 end
+
+configure do
+	init_db
+	@db.execute 'CREATE TABLE IF NOT EXISTS "Posts" 
+	("id" INTEGER PRIMARY KEY AUTOINCREMENT, 
+	"createt_date" DATE, "contant" TEXT);'
+end
+
 get '/' do 
 	erb "hello"
 end
