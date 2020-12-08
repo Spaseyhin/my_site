@@ -1,0 +1,62 @@
+<script type="text/javascript">
+
+$(function() {
+
+  // тут я могу написать любой javascript код, который исполнится
+  // после загрузки страницы
+
+  $('#color').simplecolorpicker();
+  $('#datetimepicker').datetimepicker();
+
+});
+
+</script>
+
+
+<form action="/visit" method="POST" role="form">
+<div class="form-group">
+ <div class="form-group">
+          <div class="col-sm-4">
+            <h1>    On this  <span class="badge badge-secondary">PAGE</span></h1>
+            <p> you can sign up for a barbershop</p>
+          </div>
+          <div class="col-sm-4">
+            <input  name ="username" type="text" class="form-control" id="inputEmail3" placeholder="Your name" value="<%=@username%>">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-4">
+            <input name ="phone" type="text" class="form-control"  id="inputEmail3" placeholder="Your Phone"
+            value="<%=@phone%>">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-4">
+            <input name ="datetime" type="text" class="form-control" id="datetimepicker" placeholder="Date"
+            value="<%=@date%>">
+          </div>
+        </div>
+
+
+
+   <div class="form-group">
+          <div class="col-sm-4">
+              <select name="barber" class="form-control">
+              <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option>
+              <option <%= @barber == 'Walter White' ? 'selected' : '' %>>Walter White</option>
+              <option <%= @barber == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option>
+            </select>
+          </div>
+        </div>
+
+        </div>
+          <div class="col-sm-4">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">sign up</button>
+        </div>
+      </div>
+</form>
+
+
